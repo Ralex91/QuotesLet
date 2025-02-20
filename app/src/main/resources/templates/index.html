@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motivation</title>
+</head>
+<body>
+  <h1>Motivation</h1>
+  <p th:text="${quote}"></p>
+  <form action="/motivate" method="post">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="text" name="message" placeholder="Message" required>
+    <button type="submit">Motivate</button>
+  </form>
+  <a href="/history">History</a>
+</body>
+</html>

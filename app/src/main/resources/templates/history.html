@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History</title>
+</head>
+<body>
+  <h1>History</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Message</th>
+        <th>Quote</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="conversation : ${conversations}"> 
+        <td th:text="${conversation.getUserName()}"></td>
+        <td th:text="${conversation.getMessage()}"></td>
+        <td th:text="${conversation.getQuoteReceived()}"></td>
+        <td th:text="${conversation.getDate()}"></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
