@@ -1,16 +1,17 @@
 package com.example.app.controller;
 
-import com.example.app.model.Conversation;
-import com.example.app.service.MotivationService;
-import com.example.app.repository.ConversationRepository;
+import java.time.LocalDateTime;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.time.LocalDateTime;
-import java.util.List;
+import com.example.app.model.Conversation;
+import com.example.app.repository.ConversationRepository;
+import com.example.app.service.MotivationService;
 
 @Controller
 public class MotivationController {
@@ -29,7 +30,7 @@ public class MotivationController {
         return "index";
     }
 
-    @PostMapping("/motivate")
+    @PostMapping("/")
     public String getMotivation(@RequestParam String name, @RequestParam String message, Model model) {
         String quote = motivationService.getMotivationalQuote();
         

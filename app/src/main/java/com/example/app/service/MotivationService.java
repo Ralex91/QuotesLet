@@ -3,6 +3,8 @@ package com.example.app.service;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.example.app.model.Quote;
+
 @Service
 public class MotivationService {
 
@@ -14,6 +16,8 @@ public class MotivationService {
 
     public String getMotivationalQuote() {
         String apiUrl = "http://localhost:8081/quote/random"; // Corrected URL
-        return restTemplate.getForObject(apiUrl, String.class);
+        // response of api is json: {id: "1", text: "Quote 1"} wante return only text
+        Quote quote = restTemplate.getForObject(apiUrl, Quote.class);
+        return quote.getText();
     }
 }

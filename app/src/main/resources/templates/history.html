@@ -3,27 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <title>History</title>
 </head>
-<body>
-  <h1>History</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Message</th>
-        <th>Quote</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr th:each="conversation : ${conversations}"> 
-        <td th:text="${conversation.getUserName()}"></td>
-        <td th:text="${conversation.getMessage()}"></td>
-        <td th:text="${conversation.getQuoteReceived()}"></td>
-        <td th:text="${conversation.getDate()}"></td>
-      </tr>
-    </tbody>
-  </table>
+<body class="bg-orange-50">
+  <div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center mb-6 text-orange-500">History</h1>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+        <thead>
+          <tr class="bg-orange-400 text-white">
+            <th class="py-3 px-4 text-left">Name</th>
+            <th class="py-3 px-4 text-left">Message</th>
+            <th class="py-3 px-4 text-left">Quote</th>
+            <th class="py-3 px-4 text-left">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="conversation : ${conversations}" class="border-b border-gray-300 hover:bg-orange-100">
+            <td th:text="${conversation.getUserName()}" class="py-2 px-4"></td>
+            <td th:text="${conversation.getMessage()}" class="py-2 px-4"></td>
+            <td th:text="${conversation.getQuoteReceived()}" class="py-2 px-4"></td>
+            <td th:text="${conversation.getDate()}" class="py-2 px-4"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </body>
 </html>
