@@ -1,4 +1,4 @@
-# QuoteLet 🥩🧸
+# QuotesLet 🥩🧸
 
 ## Prérequis
 
